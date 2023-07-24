@@ -11,7 +11,7 @@ function getRandomElement(array) {
 
 // Utility function to shuffle the order of items in an array in-place
 function shuffleArray(array) {
-    return array.sort((a,b) => Math.random() - 0.5);
+    return array.sort(() => Math.random() - 0.5);
 }
 
 
@@ -40,7 +40,7 @@ function getBreedFromURL(url) {
     // The string method .split(char) may come in handy
     // Try to use destructuring as much as you can
     const [,path] = url.split("/breeds/");
-    const [breedID] = path.split("/");
+    const [breedID,] = path.split("/");
     const [breed, subtype] = breedID.split("-");
     return [subtype, breed].join(" ");
 }
